@@ -19,7 +19,8 @@ def main():
     st.title("Leap Year Checker")
     
     # year = st.number_input("Enter a year:")
-    year = st.number_input("Enter a year:", value=2022.0, step=1.0)
+    # year = st.number_input("Enter a year:", value=2022.0, step=1.0)
+    year = st.number_input("Enter a year:", value=2022, format="%d", step=1.0)
     year = int(year)
     is_leap = is_leap_year(year)
     
