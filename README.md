@@ -1,4 +1,4 @@
-# is it leap-year or not?
+# is it leap year or not?
 
 <small> <br> 
 This is a known Python function to check if given year is a leap year or not. </br>
