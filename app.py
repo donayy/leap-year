@@ -12,23 +12,34 @@ def is_leap_year(year):
         return False
     else:
         return True
-    
-    
 
 def main():
-    st.title("Is It Leap Year or Not?")
+    # Kullanıcıdan dil seçimi
+    language = st.radio("Choose a language / Bir dil seçin:", ("English", "Türkçe"))
     
-    # year = st.number_input("Enter a year:")
-    year = st.number_input("Enter a year:", value=2022, step=1)
+    # Başlık
+    if language == "English":
+        st.title("Is It Leap Year or Not?")
+    else:
+        st.title("Artık Yıl mı Değil mi?")
+    
+    # Yıl girişi
+    year_label = "Enter a year:" if language == "English" else "Bir yıl girin:"
+    year = st.number_input(year_label, value=2022, step=1)
     year = int(year)
     is_leap = is_leap_year(year)
     
-    if is_leap:
-        st.write(f"{year} is a leap year.")
+    # Sonuç
+    if language == "English":
+        if is_leap:
+            st.write(f"{year} is a leap year.")
+        else:
+            st.write(f"{year} is not a leap year.")
     else:
-        st.write(f"{year} is not a leap year.")
-        
-
+        if is_leap:
+            st.write(f"{year} bir artık yıldır.")
+        else:
+            st.write(f"{year} bir artık yıl değildir.")
 
 if __name__ == "__main__":
     main()
